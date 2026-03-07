@@ -83,17 +83,27 @@
 @keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
 
 @media(max-width:768px){
-  #hero{padding:0 24px;}
+  #hero{padding:0 24px; min-height:100svh;}
   .hero-ghost{display:none;}
-  #stats{padding:40px 24px;}
+  .hero-scroll{display:none;}
+  .hero-title{font-size:clamp(4.5rem,18vw,7rem);}
+  .hero-sub{font-size:.95rem;}
+  #stats{padding:32px 24px;}
   .stats-grid{grid-template-columns:repeat(2,1fr);}
-  .stat-item{border-bottom:1px solid var(--gray-light);}
-  .services-header{grid-template-columns:1fr;}
+  .stat-item{border-bottom:1px solid var(--gray-light); padding:24px 16px;}
+  .stat-num{font-size:2.8rem;}
+  .services-header{grid-template-columns:1fr; gap:24px; margin-bottom:40px;}
   .services-grid{grid-template-columns:1fr;}
-  .process-steps{grid-template-columns:1fr 1fr;}
+  .service-card{padding:32px 24px;}
+  .process-steps{grid-template-columns:1fr 1fr; gap:16px;}
   .process-steps::before{display:none;}
-  .why-grid{grid-template-columns:1fr;}
-  .carousel-slide{min-width:calc(100% - 0px); margin-right:0;}
+  .process-step{padding:20px 12px;}
+  .process-circle{width:56px; height:56px;}
+  .why-grid{grid-template-columns:1fr; gap:40px;}
+  .why-box{padding:40px 28px;}
+  .why-big{font-size:5rem;}
+  .carousel-slide{min-width:100%; margin-right:0;}
+  .carousel-controls{margin-top:24px;}
 }
 </style>
 </head>
@@ -105,6 +115,7 @@
 <div class="cursor-dot" id="cursorDot"></div>
 <nav>
   <a href="index.html" class="nav-logo">K<span>R</span>AVE <span style="font-size:1rem;letter-spacing:2px;color:var(--gray)">DIGITAL</span></a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="services.html">Services</a></li>
@@ -399,6 +410,13 @@
   </div>
 </footer>
 
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="services.html" onclick="closeMobile()">Services</a>
+  <a href="pricing.html" onclick="closeMobile()">Pricing</a>
+  <a href="about.html" onclick="closeMobile()">About</a>
+  <a href="contact.html" class="mobile-cta" onclick="closeMobile()">Get Started</a>
+</div>
 <script src="main.js"></script>
 <script>
 // CAROUSEL

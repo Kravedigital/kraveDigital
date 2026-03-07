@@ -73,9 +73,17 @@
 .testimonials-about { background:var(--black-2); }
 
 @media(max-width:768px){
-  .story-grid,.justin-grid{grid-template-columns:1fr;}
+  .story-grid,.justin-grid{grid-template-columns:1fr; gap:40px;}
   .values-grid{grid-template-columns:1fr;}
-  .timeline-item{grid-template-columns:70px 1fr;gap:20px;}
+  .timeline-item{grid-template-columns:70px 1fr; gap:16px;}
+  .story-box{padding:32px 24px;}
+  .story-monogram{font-size:5rem;}
+  .story-founded-year{font-size:2.2rem;}
+  .justin-box{padding:32px 24px;}
+  .justin-initial{font-size:7rem;}
+  .value-card{padding:36px 28px;}
+  .mission-quote{font-size:clamp(2rem,8vw,3.5rem);}
+  .testimonials-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -87,6 +95,7 @@
 <div class="cursor-dot" id="cursorDot"></div>
 <nav>
   <a href="index.html" class="nav-logo">K<span>R</span>AVE <span style="font-size:1rem;letter-spacing:2px;color:var(--gray)">DIGITAL</span></a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="services.html">Services</a></li>
@@ -317,6 +326,13 @@
     <div class="footer-est">Est. 2022 Jacksonville, FL</div>
   </div>
 </footer>
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="services.html" onclick="closeMobile()">Services</a>
+  <a href="pricing.html" onclick="closeMobile()">Pricing</a>
+  <a href="about.html" onclick="closeMobile()">About</a>
+  <a href="contact.html" class="mobile-cta" onclick="closeMobile()">Get Started</a>
+</div>
 <script src="main.js"></script>
 </body>
 </html>

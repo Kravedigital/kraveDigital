@@ -88,3 +88,21 @@ const counterObserver = new IntersectionObserver(entries=>{
   });
 },{threshold:0.5});
 document.querySelectorAll('[data-target]').forEach(el=>counterObserver.observe(el));
+
+// ── HAMBURGER MENU ──
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+
+function closeMobile(){
+  if(hamburger) hamburger.classList.remove('open');
+  if(mobileMenu) mobileMenu.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+if(hamburger){
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+}

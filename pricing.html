@@ -100,7 +100,16 @@
   .packages-grid,.retainers-grid{grid-template-columns:1fr;}
   .bundles-grid{grid-template-columns:1fr;}
   .addons-grid{grid-template-columns:1fr 1fr;}
-  .comp-row{grid-template-columns:100px 1fr 80px;}
+  .comp-row{grid-template-columns:90px 1fr 70px; gap:8px;}
+  .comp-label{font-size:.65rem;}
+  .comp-price{font-size:.9rem;}
+  .pkg-card,.retainer-card,.bundle-card{padding:36px 24px;}
+  .pkg-price,.bundle-price{font-size:4rem;}
+  .ret-price{font-size:3.5rem;}
+  .compare-bar{padding:28px 20px;}
+  .bundle-card.featured{transform:none;}
+  .faq-list{max-width:100%;}
+  .faq-question{font-size:.9rem;}
 }
 </style>
 </head>
@@ -112,6 +121,7 @@
 <div class="cursor-dot" id="cursorDot"></div>
 <nav>
   <a href="index.html" class="nav-logo">K<span>R</span>AVE <span style="font-size:1rem;letter-spacing:2px;color:var(--gray)">DIGITAL</span></a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="services.html">Services</a></li>
@@ -439,6 +449,13 @@
     <div class="footer-est">Est. 2022 Jacksonville, FL</div>
   </div>
 </footer>
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="services.html" onclick="closeMobile()">Services</a>
+  <a href="pricing.html" onclick="closeMobile()">Pricing</a>
+  <a href="about.html" onclick="closeMobile()">About</a>
+  <a href="contact.html" class="mobile-cta" onclick="closeMobile()">Get Started</a>
+</div>
 <script src="main.js"></script>
 </body>
 </html>
